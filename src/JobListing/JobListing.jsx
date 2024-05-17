@@ -3,7 +3,11 @@ import React from 'react';
 
 import jobs from '../jobs.json'
 import JobData from '../JobListing/JobData';
+
+
 const JobListing = () => {
+
+    const recentJobs=jobs.slice(0,3);
 
     console.log(jobs)  
     return (
@@ -14,7 +18,7 @@ const JobListing = () => {
           Browse Jobs
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {jobs.map((job,index)=>(<JobData key={index} jobdata={job}/>))}
+          {recentJobs.map((job,index)=>(<JobData key={index} jobdata={job}/>))}
         </div>
       </div>
     </section>

@@ -2,6 +2,8 @@ import React from 'react';
 
 const JobData = ({jobdata}) => {
     // console.log(jobdata)
+
+    
     return (
         <>
         <div className="bg-white rounded-xl shadow-md relative">
