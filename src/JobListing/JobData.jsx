@@ -15,7 +15,7 @@ const JobData = ({jobdata}) => {
     }
 
     const setDescriptionHandeler=()=>{
-
+      console.log(showAll)
       setShowAll(!showAll)
 
     }
@@ -34,6 +34,7 @@ const JobData = ({jobdata}) => {
               </div>
               <div>
                 <button className='text-indigo-500 mb-2 hover:text-indigo-700 ' onClick={setDescriptionHandeler}>
+                  {/* {console.log(!showAll)} */}
                   {showAll ? 'Less' : 'More'}</button>
               </div>
 
