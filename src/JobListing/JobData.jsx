@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const JobData = ({jobdata}) => {
     // console.log(jobdata)
 
+    const [showAll,setShowAll]= useState(false)
+
+    console.log(showAll)
+
+    let description= jobdata.description
+
+    if (!showAll){
+      console.log(showAll)
+      description= description.substring(0,90) + "...";
+    }
+
+    const setDescriptionHandeler=()=>{
+
+      setShowAll(!showAll)
+
+    }
     
     return (
         <>
@@ -14,7 +30,11 @@ const JobData = ({jobdata}) => {
               </div>
 
               <div className="mb-5">
-               {jobdata.description}
+               {description}
+              </div>
+              <div>
+                <button className='text-indigo-500 mb-2 hover:text-indigo-700 ' onClick={setDescriptionHandeler}>
+                  {showAll ? 'Less' : 'More'}</button>
               </div>
 
               <h3 className="text-indigo-500 mb-2">{jobdata.salary}</h3>
